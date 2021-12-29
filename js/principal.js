@@ -13,10 +13,19 @@ var altura = tdAltura.textContent;
 var imc = peso / (altura * altura);
 
 var tdImc = document.querySelector(".info-imc");
-tdImc.textContent = imc
+tdImc.textContent = imc.toFixed(2); 
+
+var validaPeso = true;
+var validaAltura = true;
 
 if (peso <= 0 || peso >= 300) {
+      console.log("Peso Inválido")
       tdImc.textContent = "Peso Inválido";
+      validaPeso = false;
 }
 
-if
+if (altura <= 1 || altura >= 3) {
+      console.log("Altura Inválido")
+      tdImc.textContent = "Altura Inválida";
+      validaAltura = false;
+}
